@@ -1,0 +1,13 @@
+{%extends 'index.html'%}
+
+{% block content %}
+<section class="section" style="margin-left: 390px; margin-top: 50px;">
+<a href="{% url 'tasks'%}" style="color:rgb(22, 22, 247); text-decoration: none;">Go back</a>
+<form action="" method="post">
+    {% csrf_token %}
+    Are you sure you want to delete {{object}} Task ?
+ <input type="submit" value="Delete" style="background-color: rgb(241, 88, 88);">
+</form>
+</section>
+
+{% endblock %}

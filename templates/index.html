@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  
+  <body>
+    {% block content %}
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+       
+      
+      <div id="navbarBasicExample" class="navbar-menu">
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="{% url 'signup'%}">
+                <strong>Signup</strong>
+              </a>
+              <a class="button is-primary" href="{% url 'login'%}">
+                <strong>Login</strong>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+  <section class="section" style="margin-left: 390px; margin-top: 50px;">
+      <h1 class="title">TODO APP</h1>
+      <h2 class="subtitle">
+        Create an account and add your daily tasks here for reminders
+      </h2>
+    
+    </section>
+    {% endblock %}
+</body>

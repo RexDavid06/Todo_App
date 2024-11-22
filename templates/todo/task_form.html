@@ -1,0 +1,14 @@
+{% extends 'index.html'%}
+{% block content%}
+<section class="section" style="margin-left: 390px; margin-top: 50px;">
+<a href="{% url 'tasks'%}" style="color:rgb(22, 22, 247); text-decoration: none;">Go back</a>
+<div>
+    <form action="" method="post" >
+        {% csrf_token %}
+        {{form.as_p}}  <br>
+        <input type="submit" name="Add task" id="">
+    </form>
+    
+</div>
+</section>
+{% endblock%}

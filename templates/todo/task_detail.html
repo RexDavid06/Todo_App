@@ -1,0 +1,11 @@
+{% extends 'index.html'%}
+
+{% block content%}
+<section class="section" style="margin-left: 390px; margin-top: 50px;">
+   <a href="{% url 'tasks'%}" style="color:rgb(22, 22, 247); text-decoration: none;">Go back</a>
+
+<div >
+   <h1 > {{object.description}}</h1>
+</div>
+</section>
+{% endblock %}

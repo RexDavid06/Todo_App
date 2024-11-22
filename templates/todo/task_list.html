@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  
+  <body>
+  
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+       
+      
+      <div id="navbarBasicExample" class="navbar-menu">
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="{% url 'logout'%}">
+                <strong>Logout</strong>
+              </a>
+              <a class="button is-light">
+                {{request.user}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+  <section class="section" style="margin-left: 390px; margin-top: 50px;">
+      <h1 class="title">TODO APP</h1>
+      <h2 class="subtitle">
+        Add your daily tasks here for reminders
+      </h2>
+      <button class="button is-primary"><a href="{% url 'task-create'%}" style="color: black;">Add Task </a></button>
+    </section>
+
+    <div style="background-color: rgb(41, 155, 117); width: 50%;  margin-left: 250px; color: white; text-align: center;">
+       
+      <table >
+        <tr>
+            <th>Title</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for task in object_list%}
+        <tr>
+        <td>{{task.title}}</td>
+        <td><a href="{% url 'task-details' task.id %}" style="color: black;">View</a></td>
+        <td style="color: black;"> |</td>
+        <td><a href="{% url 'task-update' task.id %}" style="color: black;">Edit</a></td>
+        <td style="color: black;"> |</td>
+        <td><a href="{% url 'task-delete' task.id %}" style="color: black;">Delete</a></td>
+        <td style="color: black;"> |</td>
+        </tr>
+        {% empty %}
+        <h5>Empty Task List</h5>
+        {% endfor %}
+        
+      </table>
+      
+    </div>
+
+  
+  </body>
+</html>
