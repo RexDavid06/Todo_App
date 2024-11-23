@@ -1,0 +1,2 @@
+# My Approach to this project
+So...my approach to this project was firstly get an authentication system set. This system sets restrictions to both logged in and users that are not signed up yet. Then there is a restriction that sets users to not view other users task.
